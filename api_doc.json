@@ -1,0 +1,220 @@
+{
+	"openapi": "3.0.2",
+	"info": {
+		"title": "Test API Gorrila Mux",
+		"version": "1.0",
+		"description": "API Dengan Routing Gorilla Mux"
+	},
+	"servers": [{ "url": "http://localhost:5000/api" }],
+	"paths": {
+		"/products": {
+			"get": {
+				"tags": ["products"],
+				"description": "Get All products",
+				"summary": "Get All products",
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"properties": {
+											"id": {
+												"type": "number"
+											},
+											"name": {
+												"type": "string"
+											},
+											"stock": {
+												"type": "number"
+											},
+											"harga": {
+												"type": "number"
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": ["products"],
+				"summary": "Create Product",
+				"description": "Create Product",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"stock": {
+										"type": "number"
+									},
+									"harga": {
+										"type": "number"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"201": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"id": {
+											"type": "number"
+										},
+										"name": {
+											"type": "string"
+										},
+										"stock": {
+											"type": "number"
+										},
+										"harga": {
+											"type": "number"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/products/{id}": {
+			"get": {
+				"tags": ["products"],
+				"description": "Get Product By Id",
+				"summary": "Get Product By Id",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Product Id"
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"id": {
+											"type": "number"
+										},
+										"name": {
+											"type": "string"
+										},
+										"stock": {
+											"type": "number"
+										},
+										"harga": {
+											"type": "number"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"tags": ["products"],
+				"description": "Update Product By Id",
+				"summary": "Update Product By Id",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Product Id"
+					}
+				],
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"stock": {
+										"type": "number"
+									},
+									"harga": {
+										"type": "number"
+									}
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"id": {
+											"type": "number"
+										},
+										"name": {
+											"type": "string"
+										},
+										"stock": {
+											"type": "number"
+										},
+										"harga": {
+											"type": "number"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": ["products"],
+				"description": "Delete Product By Id",
+				"summary": "Delete Product By Id",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Product Id"
+					}
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "object",
+									"properties": {
+										"msg": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

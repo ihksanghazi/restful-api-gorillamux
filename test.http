@@ -1,0 +1,26 @@
+### GET ALL PRODUCTS
+GET http://localhost:5000/api/products
+
+### GET PRODUCT BY ID
+GET http://localhost:5000/api/products/2
+
+### CREATE PRODUCT
+POST http://localhost:5000/api/products
+
+{
+  "name":"Komputer",
+  "stock":5,
+  "harga":4000000
+}
+
+### UPDATE PRODUCT BY ID
+PUT http://localhost:5000/api/products/2
+
+{
+  "name":"Komputer Diubah",
+  "stock":10,
+  "harga":4000000
+}
+
+### DELETE PRODUCT BY ID
+DELETE http://localhost:5000/api/products/2
